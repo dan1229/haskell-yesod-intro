@@ -10,6 +10,7 @@ import Database.Persist.Postgresql
 import Yesod
 
 
+newtype AppSettings = AppSettings { jwt :: String }
 newtype App = App { appConnectionPool :: Pool SqlBackend, appSettings :: AppSettings }
 
 
