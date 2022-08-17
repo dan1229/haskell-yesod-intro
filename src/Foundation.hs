@@ -4,7 +4,7 @@ import Data.Pool
 import Database.Persist.Postgresql
 import Yesod
 
-    
+
 mkYesodData "App" [parseRoutes|
 / HomeR GET
 |]
@@ -21,8 +21,14 @@ instance YesodPersist App where
     runSqlPool action pool
 
 
+instance HasAppSettings (HandlerFor App) where
+  getAppSettings = getsYesod appSettings
 
-newtype App = App { appConnectionPool :: Pool SqlBackend, appSettings :: AppSettings }
+instance HasJwt (HandlerFor App) where
+  getJwt = getsAppSettings jwt
+
+
+data App = App { appConnectionPool :: Pool SqlBackend, appSettings :: AppSettings }
 
     
 instance Yesod App

@@ -8,15 +8,15 @@ import Yesod
 
 mkYesodDispatch "App" resourcesApp
 
-    
+
 getHomeR :: Handler ()
 getHomeR = pure ()
 
 
 appMain :: IO ()
-appMain = runStderrLoggingT $ do
+appMain =  do
   appSettings <- loadAppSettingsArgs [configSettingsYml] [] useEnv
-  pool <- createPostgresqlPool "host=localhost port=5432 dbname=yesodapp" 10
+  pool <- runStderrLoggingT $ createPostgresqlPool "host=localhost port=5432 dbname=yesodapp" 10
   lift $ warp 3000 $ App pool appSettings
 --   args <- getArgs
 --   case args of
