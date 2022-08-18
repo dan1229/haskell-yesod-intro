@@ -1,9 +1,12 @@
-
+{-# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE TemplateHaskell #-}
 module Application where
 
 import Control.Monad.Logger
 import Database.Persist.Postgresql
 import Yesod
+import Yesod.Default.Config2
+import Foundation
 
 
 mkYesodDispatch "App" resourcesApp

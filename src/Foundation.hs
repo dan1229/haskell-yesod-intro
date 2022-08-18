@@ -1,17 +1,16 @@
+{-# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE TemplateHaskell #-}
 module Foundation where
 
 import Data.Pool
 import Database.Persist.Postgresql
 import Yesod
+import Settings
 
 
 mkYesodData "App" [parseRoutes|
 / HomeR GET
 |]
-
-class Monad (YesodDB site) => YesodPersist site where
-    type YesodPersistBackend site
-    runDB :: YesodDB site a -> HandlerFor site a
 
 
 instance YesodPersist App where

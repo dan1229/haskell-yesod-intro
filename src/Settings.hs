@@ -7,8 +7,8 @@ newtype AppSettings = AppSettings { jwt :: String }
 getsAppSettings :: HasAppSettings m => (AppSettings -> a) -> m a
 getsAppSettings f = f <$> getAppSettings 
 
-class HasAppSettings m where
+class Monad m => HasAppSettings m where
     getAppSettings :: m AppSettings
 
-class HasJwt m where
+class Monad m => HasJwt m where
     getJwt :: m String
