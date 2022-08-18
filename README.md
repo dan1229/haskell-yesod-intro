@@ -1,1 +1,1 @@
-# Haskell Yesod Intro
+# haskell-yesod-intro
