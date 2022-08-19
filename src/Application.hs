@@ -18,9 +18,9 @@ getHomeR = pure ()
 
 appMain :: IO ()
 appMain =  do
-  appSettings <- loadAppSettingsArgs [configSettingsYml] [] useEnv
+  appSettings <- loadAppSettings [configSettingsYml] [] useEnv
   pool <- runStderrLoggingT $ createPostgresqlPool "host=localhost port=5432 dbname=yesodapp" 10
-  lift $ warp 3000 $ App pool appSettings
+  warp 3000 $ App pool appSettings
 --   args <- getArgs
 --   case args of
 --     ["--help"] -> putStrLn usage
