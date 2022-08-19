@@ -9,8 +9,7 @@ import Yesod.Default.Config2
 import Foundation
 
 
-mkYesodDispatch "App" resourcesApp
-
+-- mkYesodDispatch "App" resourcesApp
 
 getHomeR :: Handler ()
 getHomeR = pure ()
