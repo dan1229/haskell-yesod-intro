@@ -1,7 +1,6 @@
 module Settings where
 
 import Data.Aeson
-import Control.Monad
 
 newtype AppSettings = AppSettings { jwt :: String }
 
@@ -16,6 +15,4 @@ class Monad m => HasJwt m where
     getJwt :: m String
 
 instance FromJSON AppSettings where
-    parseJSON (Object o) = AppSettings <$> o .: "jwt"
-    parseJSON _ = mzero 
-    
+    parseJSON = withObject "AppSettings" $ \o -> AppSettings <$> o .: "jwt"

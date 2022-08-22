@@ -4,7 +4,7 @@
 {-# LANGUAGE TypeFamilies #-}
 module Main where
 
-import src.Application
+import Application
 
 
 

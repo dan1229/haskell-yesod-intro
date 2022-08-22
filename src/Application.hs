@@ -1,5 +1,6 @@
 {-# LANGUAGE QuasiQuotes #-}
 {-# LANGUAGE TemplateHaskell #-}
+{-# OPTIONS_GHC -Wno-orphans #-}
 module Application where
 
 import Control.Monad.Logger
@@ -8,8 +9,7 @@ import Yesod
 import Yesod.Default.Config2
 import Foundation
 
-
--- mkYesodDispatch "App" resourcesApp
+mkYesodDispatch "App" resourcesApp
 
 getHomeR :: Handler ()
 getHomeR = pure ()
