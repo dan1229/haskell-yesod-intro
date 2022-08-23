@@ -16,6 +16,7 @@ library
       Foundation
       Handler.Home
       Models.User
+      Orphans
       Settings
   other-modules:
       Paths_haskell_yesod_intro
@@ -32,6 +33,9 @@ library
       MultiParamTypeClasses
       StandaloneDeriving
       TypeFamilies
+      RecordWildCards
+      DeriveGeneric
+      DeriveAnyClass
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-missing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       aeson
@@ -61,6 +65,9 @@ executable haskell-yesod-intro-exe
       MultiParamTypeClasses
       StandaloneDeriving
       TypeFamilies
+      RecordWildCards
+      DeriveGeneric
+      DeriveAnyClass
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-missing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       aeson
@@ -92,6 +99,9 @@ test-suite haskell-yesod-intro-test
       MultiParamTypeClasses
       StandaloneDeriving
       TypeFamilies
+      RecordWildCards
+      DeriveGeneric
+      DeriveAnyClass
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-missing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       aeson

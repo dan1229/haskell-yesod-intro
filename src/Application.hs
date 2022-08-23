@@ -8,16 +8,14 @@ import Database.Persist.Postgresql
 import Yesod
 import Yesod.Default.Config2
 import Foundation
+import Handler.Home
 
 mkYesodDispatch "App" resourcesApp
-
-getHomeR :: Handler ()
-getHomeR = pure ()
 
 
 appMain :: IO ()
 appMain = runStderrLoggingT $ do
-  currAppSettings <- liftIO $ loadYamlSettings [configSettingsYml] [] useEnv
+  currAppSettings <- liftIO $ loadYamlSettings ["config/settings.yml"] [] useEnv
   pool <-  createPostgresqlPool "host=localhost port=5432 dbname=yesodapp" 10
   liftIO $ warp 3000 $ App pool currAppSettings
   

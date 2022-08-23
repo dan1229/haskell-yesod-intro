@@ -11,6 +11,9 @@ default-extensions:
 - MultiParamTypeClasses
 - StandaloneDeriving
 - TypeFamilies
+- RecordWildCards
+- DeriveGeneric
+- DeriveAnyClass
 
 dependencies:
 - base >= 4.7 && < 5
