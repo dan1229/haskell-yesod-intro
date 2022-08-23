@@ -27,7 +27,8 @@ instance HasJwt (HandlerFor App) where
   getJwt = getsAppSettings jwt
 
 
-data App = App { appConnectionPool :: Pool SqlBackend, appSettings :: AppSettings }
+data App = App { appConnectionPool :: ConnectionPool, appSettings :: AppSettings }
+-- data App = App { appConnectionPool :: Pool SqlBackend, appSettings :: AppSettings }
 
     
 instance Yesod App
