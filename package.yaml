@@ -3,8 +3,14 @@ name:                haskell-yesod-intro
 default-extensions:
 - OverloadedStrings
 - FlexibleInstances
-- TypeFamilies
 - ScopedTypeVariables
+- DataKinds
+- DerivingStrategies
+- GADTs
+- GeneralizedNewtypeDeriving
+- MultiParamTypeClasses
+- StandaloneDeriving
+- TypeFamilies
 
 dependencies:
 - base >= 4.7 && < 5
@@ -14,6 +20,7 @@ dependencies:
 - persistent
 - resource-pool
 - aeson
+- text
 
 ghc-options:
 - -Wall
