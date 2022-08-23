@@ -14,6 +14,8 @@ library
   exposed-modules:
       Application
       Foundation
+      Handler.Home
+      Models.User
       Settings
   other-modules:
       Paths_haskell_yesod_intro
@@ -29,6 +31,7 @@ library
       aeson
     , base >=4.7 && <5
     , monad-logger
+    , persistent
     , persistent-postgresql
     , resource-pool
     , yesod
@@ -51,6 +54,7 @@ executable haskell-yesod-intro-exe
     , base >=4.7 && <5
     , haskell-yesod-intro
     , monad-logger
+    , persistent
     , persistent-postgresql
     , resource-pool
     , yesod
@@ -74,6 +78,7 @@ test-suite haskell-yesod-intro-test
     , base >=4.7 && <5
     , haskell-yesod-intro
     , monad-logger
+    , persistent
     , persistent-postgresql
     , resource-pool
     , yesod

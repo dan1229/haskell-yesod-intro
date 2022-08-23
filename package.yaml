@@ -11,6 +11,7 @@ dependencies:
 - yesod
 - monad-logger
 - persistent-postgresql
+- persistent
 - resource-pool
 - aeson
 

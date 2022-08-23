@@ -2,7 +2,6 @@
 {-# LANGUAGE TemplateHaskell #-}
 module Foundation where
 
-import Data.Pool
 import Database.Persist.Postgresql
 import Yesod
 import Settings
